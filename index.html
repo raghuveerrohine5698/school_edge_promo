@@ -5,7 +5,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <style>
-      * {
+  * {
           margin: 0;
           padding: 0;
           box-sizing: border-box;
@@ -17,15 +17,16 @@
           background: linear-gradient(135deg, #ffd700, #ffa000);
           display: grid;
           place-items: center;
-          padding: 1rem;
-          color: #000;  /* Changed to black */
-          overflow: hidden;
+          padding: 2rem;
+          color: #000;
+          overflow-x: hidden;
+          overflow-y: auto; /* Changed to allow scrolling */
       }
   
       .container {
           width: 100%;
           max-width: 1200px;
-          height: 90vh;
+          min-height: 90vh; /* Changed from fixed height to minimum height */
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 2rem;
@@ -56,9 +57,9 @@
           padding-right: 2rem;
       }
   
-      .right-section {
-          display: grid;
-          grid-template-rows: auto 1fr;
+  .right-section {
+          display: flex;  /* Changed from grid to flex */
+          flex-direction: column;  /* Stack children vertically */
           gap: 1.5rem;
       }
   
@@ -237,25 +238,28 @@
           pointer-events: none;
           z-index: 0;
       }
-       .contact-section {
+     .contact-section {
           background: rgba(255, 215, 0, 0.1);
           padding: 1.5rem;
           border-radius: 1rem;
           border: 1px solid rgba(255, 215, 0, 0.3);
-          margin-top: 2rem;
+          margin-top: auto; /* Push to bottom of flex container */
           text-align: center;
       }
+
       .contact-title {
           font-size: 1.8rem;
           font-weight: bold;
           color: #000;
           margin-bottom: 1rem;
       }
+
       .contact-info {
           font-size: 1.2rem;
           color: #000;
           line-height: 1.5;
       }
+
       .glow:nth-child(1) { top: 20%; left: 20%; }
       .glow:nth-child(2) { bottom: 30%; right: 20%; }
   </style>
